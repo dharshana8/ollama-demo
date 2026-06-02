@@ -46,3 +46,6 @@ Context:
     )
     for chunk in stream:
         yield chunk['message']['content']
+
+def get_sources(query):
+    return [(chunk.strip(), round(score, 3)) for chunk, score in retrieve(query)]
